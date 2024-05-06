@@ -50,6 +50,7 @@
 		57BBAB1C2BE6E6A900E3DE8C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BBAB1B2BE6E6A900E3DE8C /* StringExtension.swift */; };
 		57BBAB1E2BE7E6D300E3DE8C /* ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BBAB1D2BE7E6D300E3DE8C /* ThemeColors.swift */; };
 		57BBAB222BE895D200E3DE8C /* ViewInspectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BBAB212BE895D200E3DE8C /* ViewInspectorTests.swift */; };
+		57BBAB252BE8DB9200E3DE8C /* PokeApiPokeTypeSpies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BBAB242BE8DB9200E3DE8C /* PokeApiPokeTypeSpies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		57BBAB1B2BE6E6A900E3DE8C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		57BBAB1D2BE7E6D300E3DE8C /* ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColors.swift; sourceTree = "<group>"; };
 		57BBAB212BE895D200E3DE8C /* ViewInspectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInspectorTests.swift; sourceTree = "<group>"; };
+		57BBAB242BE8DB9200E3DE8C /* PokeApiPokeTypeSpies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeApiPokeTypeSpies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 		57BBAA732BE1912400E3DE8C /* supereffectiveTests */ = {
 			isa = PBXGroup;
 			children = (
+				57BBAB232BE8DB6C00E3DE8C /* Spies */,
 				57BBAA742BE1912400E3DE8C /* supereffectiveTests.swift */,
 				57BBAB212BE895D200E3DE8C /* ViewInspectorTests.swift */,
 			);
@@ -327,6 +330,14 @@
 				57BBAB142BE4495200E3DE8C /* PokeBallViewModifier.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		57BBAB232BE8DB6C00E3DE8C /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				57BBAB242BE8DB9200E3DE8C /* PokeApiPokeTypeSpies.swift */,
+			);
+			path = Spies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,6 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57BBAB252BE8DB9200E3DE8C /* PokeApiPokeTypeSpies.swift in Sources */,
 				57BBAB222BE895D200E3DE8C /* ViewInspectorTests.swift in Sources */,
 				57BBAA752BE1912400E3DE8C /* supereffectiveTests.swift in Sources */,
 			);

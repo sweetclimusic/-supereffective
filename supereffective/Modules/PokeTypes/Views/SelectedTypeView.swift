@@ -27,10 +27,11 @@ extension PokeApi.PokeType {
         var title: String
         var effective: Bool = false
         var notEffective: Bool = false
+        var themeColor: Color = .secondary
         @ViewBuilder
         func buildSubtitle() -> some View {
-            var superEffectiveTitle = "Super Effective"
-            var notEffectiveTitle = "Not Very Effective"
+            let superEffectiveTitle = "Super Effective"
+            let notEffectiveTitle = "Not Very Effective"
             
             if effective {
                 Text(superEffectiveTitle.uppercased())
@@ -54,12 +55,13 @@ extension PokeApi.PokeType {
                 Rectangle()
                     .fill(.background)
                     .frame(width: .infinity, height: 56, alignment: .leading)
-                    .shadow(color: .secondary, radius: 1, x: 0, y: 1)
+                    .shadow(color: themeColor, radius: 1, x: 0, y: 1)
                 HStack{
                     Image(systemName: "bolt.horizontal.circle.fill")
                         .modifier(PokeBall())
                     VStack(alignment: .leading, spacing: 0) {
-                        Text(title).font(.headline)
+                        Text(title.uppercased())
+                            .font(.body)
                         buildSubtitle()
                     }
                     .frame(alignment: .leading)
@@ -76,21 +78,36 @@ extension PokeApi.PokeType {
         weak var viewDelegate: PokeApiTypeViewDelegate?
         @State var pokemonTypes: [PokemonType]
         
+        internal let inspection = Inspection<Self>()
         var body: some View {
             VStack(alignment: .leading, spacing: 0) {
+                HStack{
+                    Text(viewModel.type.uppercased())
+                        .font(.largeTitle)
+                }
+                .padding(0)
+                .background(
+                    LinearGradient(colors: [Color(.systemBackground), viewModel.theme], startPoint: .init(x: 0.85, y: 0), endPoint: .init(x: 0.95, y: 1))
+                )
+                
                 List(pokemonTypes, id: \.self) { type in
-                    PokemonTypeView(
-                        title: type.name,
-                        effective: viewModel.superEffective.contains(type.name),
-                        notEffective: viewModel.notVeryEffective.contains(type.name))
+                        PokemonTypeView(
+                            title: type.name,
+                            effective: viewModel.superEffective.contains(type.name),
+                            notEffective: viewModel.notVeryEffective.contains(type.name),
+                            themeColor: viewModel.theme)
                     .listRowSeparator(.hidden)
-                }.frame(minHeight: 1000)
+                }
+                .listRowInsets(EdgeInsets.init(top: 0, leading: 8, bottom: 0, trailing: 8))
+                .frame(minHeight: 1000)
                 .listStyle(.inset)
                 Button(viewModel.buttonText) {
                     viewDelegate?.navigateToPokemonView()
                 }
             }
             .navigationTitle(viewModel.type)
+            .toolbar(.hidden)
+            .onReceive(inspection.notice) { self.inspection.visit(self, $0) }
         }
     }
 }

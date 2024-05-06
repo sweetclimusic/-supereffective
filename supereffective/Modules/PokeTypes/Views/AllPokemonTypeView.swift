@@ -41,6 +41,7 @@ extension PokeApi.PokeType {
                             }
                         })
                 }
+                .listRowInsets(EdgeInsets.init(top: 0, leading: 8, bottom: 0, trailing: 8))
                 .frame(minHeight: 1000)
                 .listStyle(.inset)
                 .navigationTitle("Pokemon Types")

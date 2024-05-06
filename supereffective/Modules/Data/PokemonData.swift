@@ -32,7 +32,10 @@ struct PokemonType: Codable, Identifiable, Equatable, Hashable {
     enum CodingKeys: String, CodingKey {
         case name, url
     }
-    
+    init(name typeName: String){
+        self.name = typeName
+        self.url = "/"
+    }
     init(from decoder: any Decoder) throws {
         do {
             let container = try decoder.container(keyedBy: CodingKeys.self )

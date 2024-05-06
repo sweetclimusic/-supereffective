@@ -83,8 +83,6 @@ extension PokeApi.PokeType {
     
     struct SceneView: View {
         var observableState: ObservableState = ObservableState()
-
-        weak var viewDelegate: PokeApiTypeViewDelegate?
         
         internal let inspection = Inspection<Self>()
         var body: some View {
