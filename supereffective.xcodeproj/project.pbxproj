@@ -149,6 +149,7 @@
 		57BBAA572BE1912200E3DE8C = {
 			isa = PBXGroup;
 			children = (
+				57BBAA8D2BE1914B00E3DE8C /* README.md */,
 				57BBAA622BE1912200E3DE8C /* supereffective */,
 				57BBAA732BE1912400E3DE8C /* supereffectiveTests */,
 				57BBAA7D2BE1912400E3DE8C /* supereffectiveUITests */,
@@ -171,7 +172,6 @@
 			children = (
 				57BBAAC92BE1974500E3DE8C /* Modules */,
 				57BBAA632BE1912200E3DE8C /* supereffectiveApp.swift */,
-				57BBAA8D2BE1914B00E3DE8C /* README.md */,
 				57BBAA672BE1912400E3DE8C /* Assets.xcassets */,
 				57BBAA692BE1912400E3DE8C /* Preview Content */,
 			);

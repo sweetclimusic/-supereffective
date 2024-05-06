@@ -21,6 +21,7 @@
 
 
 ## Discovery
+I wanted too use this take home test to explore clean swift in a fully SwiftUI project. NavigationStack needs further deep dive when using the clean swift pattern and it is something I will address in the near future on this project.
 
 ### Factory, [on github](https://github.com/hmlongco/Factory)
 
@@ -32,8 +33,14 @@ create the first service by extending the `Container` a factory defined object. 
 2. PokemonDataTypeCache, this is a cache of the types previously requested and saved to userDefaults
 
 ## Unit Testing
-
+ View Inspector not launching to the correct view on the simulator
+ 
 ## Improvements
+
+working with navigationstack and path state
+animation between related views
+cache queries into a object that is managed by Factory
+remove magic numbers and strings, centralize both for reusable and localisation strings
 
 ### UI for the Pokemon Modules
 
