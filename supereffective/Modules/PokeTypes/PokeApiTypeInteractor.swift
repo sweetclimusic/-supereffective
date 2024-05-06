@@ -23,16 +23,16 @@ protocol PokeApiTypeBusinessLogic {
 }
 
 protocol PokeApiTypeDataStore {
-    var pokemonType: Int? { get set }
-    var getDoubleDamageFrom: Bool { get set }
+    var pokemonType: String? { get set }
+    var pokemonTypes: [PokemonType] { get set }
 }
 
 extension PokeApi.PokeType {
     class Interactor: PokeApiTypeDataStore {
         
-        var pokemonType: Int?
+        var pokemonType: String?
         
-        var getDoubleDamageFrom: Bool = false
+        var pokemonTypes = [PokemonType]()
         
         var presenter: PokeApiTypePresentationLogic!
         private let pokeApiGetService = Container.shared.pokeApiGetService()
@@ -43,9 +43,10 @@ extension PokeApi.PokeType.Interactor: PokeApiTypeBusinessLogic {
     func getViewContents() {
         Task { 
             let data = try await fetchPokeTypes()
+            pokemonTypes = data
             presenter.presentViewContents(
                 response: .init(
-                    types: data)
+                    selectedType: pokemonType, types: data, damageRelations: nil)
             )
         }
     }
@@ -53,11 +54,15 @@ extension PokeApi.PokeType.Interactor: PokeApiTypeBusinessLogic {
     func getSelected(for id: Int) {
         Task {
             let data = try await fetchPokeType(with: id)
+            pokemonType = data.name
             print(data)
-//            presenter.presentViewContents(
-//                response: .init(
-//                    types: data)
-//            )
+            presenter.presentViewContents(
+                response: .init(
+                    selectedType: pokemonType, 
+                    types: pokemonTypes,
+                    damageRelations: data
+                )
+            )
         }
     }
     

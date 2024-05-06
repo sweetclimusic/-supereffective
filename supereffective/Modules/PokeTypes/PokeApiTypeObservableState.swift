@@ -24,6 +24,7 @@ protocol PokeApiTypeDisplayLogic: AnyObject {
 
 protocol PokeApiTypeViewDelegate: AnyObject {
     func displaySelectedType(for url: String)
+    func navigateToPokemonView()
 }
 
 extension PokeApi.PokeType {
@@ -33,10 +34,13 @@ extension PokeApi.PokeType {
         var interactor: PokeApiTypeBusinessLogic!
         var router: PokeApiTypeRoutingLogic!
         
+        /// Mange display content based on values stored in the ViewModel
         func displayViewContents(viewModel: PokeApi.PokeType.ViewContents.ViewModel) {
-            
-            self.viewState = viewModel.types.isEmpty ? .empty : .all(pokemonTypes: viewModel.types, viewDelegate: self)
-            
+            if viewModel.damageRelationViewModel != nil {
+                self.viewState = .selectedType(viewModel: viewModel, viewDelegate: self)
+            } else {
+                self.viewState = viewModel.types.isEmpty ? .empty : .all(pokemonTypes: viewModel.types, viewDelegate: self)
+            }
             let scene = PokeApi.PokeType.SceneView(observableState: self)
             
         }
@@ -51,7 +55,10 @@ extension PokeApi.PokeType {
             guard let selection = url.idFromUrl(Endpoint.types())
             else { return }
             interactor.getSelected(for: selection )
-            
+        }
+        
+        func navigateToPokemonView() {
+            router.navigateToPokemonOfType()
         }
     }
 }

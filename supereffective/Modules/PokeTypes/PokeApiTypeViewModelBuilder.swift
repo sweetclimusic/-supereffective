@@ -19,12 +19,16 @@ extension PokeApi.PokeType {
         typealias Response = PokeApi.PokeType.ViewContents.Response
         typealias DamageRelationViewModel = PokeApi.PokeType.ViewContents.DamageRelationViewModel
 
-        func buildDamageRelationViewModel(response: Response) -> DamageRelationViewModel {
-//            response.types.map{
-//                $0.url
-//                // fetch data from URL, get the below
-//            }
-            .init(type: "", superEffective: [String](), notVeryEffective: [String]())
+        func buildDamageRelationViewModel(response: Response) -> DamageRelationViewModel? {
+            guard let name = response.selectedType,
+                  let damageRelations = response.damageRelations
+            else { return nil }
+                let types = response.types.map{ $0.name }
+            
+            return  .init(type: name,
+                          types: types,
+                          superEffective: damageRelations.getSuperEffective(),
+                          notVeryEffective: damageRelations.getNotVeryEffective())
         }
     }
 }

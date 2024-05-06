@@ -67,7 +67,7 @@ struct PokemonTypeData: Decodable, Identifiable {
     }
     
     func getSuperEffective() -> [String] {
-        damageRelations.doubleDamageFrom.map{ $0.name }
+        damageRelations.doubleDamageTo.map{ $0.name }
     }
 }
 

@@ -21,18 +21,20 @@ extension PokeApi.PokeType {
         }
 
         struct Response {
+            let selectedType: String?
             let types: [PokemonType]
+            let damageRelations: PokemonTypeData?
         }
 
         struct ViewModel {
             static let title = "Type TITLE"
             let types: [PokemonType]
-            let damageRelationViewModel: DamageRelationViewModel
-            //PokemonTypeData
+            let damageRelationViewModel: DamageRelationViewModel?
         }
         
         struct DamageRelationViewModel {
             let type: String
+            let types: [String]
             let superEffective: [String]
             let notVeryEffective: [String]
             let buttonText: String = "View Pokemon Types"

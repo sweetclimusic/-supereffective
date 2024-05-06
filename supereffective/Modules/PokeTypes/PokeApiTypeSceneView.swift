@@ -71,17 +71,12 @@ extension PokeApi.PokeType {
                 allPokemonTypeView(pokemonTypes: pokemonTypes, viewDelegate: viewDelegate)
             case .selectedType(viewModel: let viewModel,
                                viewDelegate: let viewDelegate):
-                EmptyView()
-//                VStack() {
-//                    PokeApi.PokeType.DamageRelationView(
-//                        viewModel: viewModel.damageRelationViewModel,
-//                        didTapButton: viewDelegate?.didTapButton,
-//                        pokemonTypes: <#T##[PokemonType]#>,
-//                        selectedPokemonType: <#T##PokemonType#>
-//                    )
-//                }.navigationTitle(
-//                    Text(PokeApi.PokeType.ViewContents.ViewModel.title)
-//                )
+
+                    PokeApi.PokeType.DamageRelationView(
+                        viewModel: viewModel.damageRelationViewModel!,
+                        viewDelegate: viewDelegate,
+                        pokemonTypes: viewModel.types
+                    )
             }
         }
     }

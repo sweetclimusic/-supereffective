@@ -67,9 +67,16 @@ final class supereffectiveTests: XCTestCase {
         //Given
         let bugScheme = PokemonTypeTheme(rawValue: "bug")
         //When
-        let damageRelationsForBugs = PokeApi.PokeType.ViewContents.DamageRelationViewModel(type: "Bug",
-                                                              superEffective: [String](),
-                                                              notVeryEffective: [String]())
+        let damageRelationsForBugs = PokeApi.PokeType.ViewContents.DamageRelationViewModel(
+            type: "Bug",
+            
+            types: [
+                "bug",
+                "normal"
+            ],
+            superEffective: [String](),
+            notVeryEffective: [String]()
+        )
         let simulatorColorScheme: Int = UIApplication.shared.connectedScenes.first?.inputView?.traitCollection.userInterfaceStyle.rawValue ?? 0
         
         //Then

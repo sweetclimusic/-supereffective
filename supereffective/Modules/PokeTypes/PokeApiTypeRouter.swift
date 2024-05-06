@@ -17,7 +17,7 @@
 import SwiftUI
 
 protocol PokeApiTypeRoutingLogic {
-    func navigateToSelectedType()
+    func navigateToPokemonOfType()
 }
 
 protocol PokeApiTypeDataPassing {
@@ -29,15 +29,15 @@ extension PokeApi.PokeType {
         var sceneView: any View = PokeApi.PokeType.SceneState.empty
         var dataStore: PokeApiTypeDataStore!
         
-        func navigateToSelectedType() {
-//            viewController?.navigationController?.navigateTo(displayScene: <somewhere>)
+        func navigateToPokemonOfType() {
+//            Route to Pokemon modules
         }
         
         init(){}
         
-        init(pokemonType: Int, getDoesDoubleDamageData: Bool = false) {
+        init(pokemonType: String, pokemonTypes:[PokemonType] = [PokemonType]()) {
             self.dataStore.pokemonType = pokemonType
-            self.dataStore.getDoubleDamageFrom = getDoesDoubleDamageData
+            self.dataStore.pokemonTypes = pokemonTypes
         }
         
         init(sceneView: any View, dataStore: PokeApiTypeDataStore!) {

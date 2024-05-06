@@ -9,8 +9,8 @@ import SwiftUI
 
 enum PokemonTypeScene {
     case types
-    case doubleDamageTo(pokemonType: Int)
-    case doubleDamageFrom(pokemonType: Int)
+    case doubleDamageTo(pokemonType: String)
+    case doubleDamageFrom(pokemonType: String)
     case pokemonWithAdvantage(pokemonType: Int)
     case pokemonWithDisAdvantage(pokemonType: Int)
 
