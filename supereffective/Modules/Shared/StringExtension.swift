@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 extension String {
     /// Extract the initial substring up to the index.
     /// parameter index: The index of the character to cut the string off at

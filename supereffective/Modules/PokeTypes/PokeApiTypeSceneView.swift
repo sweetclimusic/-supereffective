@@ -84,18 +84,9 @@ extension PokeApi.PokeType {
     struct SceneView: View {
         var observableState: ObservableState = ObservableState()
         
-        internal let inspection = Inspection<Self>()
         var body: some View {
             ScrollView{
                 AnyView(observableState.viewState.body)
-            }
-            .onReceive(
-                inspection.notice
-            ) {
-                self.inspection.visit(
-                    self,
-                    $0
-                )
             }
             .onAppear{
                 observableState.interactor.getViewContents()

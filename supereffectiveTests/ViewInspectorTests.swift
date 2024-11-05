@@ -17,7 +17,7 @@ final class PokeApiTypeViewInspectorTests: XCTestCase {
     var observableState: PokeApi.PokeType.ObservableState!
     var interactorSpy: PokeApiTypeBusinessLogicSpy!
     var routerSpy: PokeApiTypeRouterLogicSpy!
-    var timeout: Double = 60.0
+    var timeout: Double = 5.0
     
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -53,14 +53,14 @@ final class PokeApiTypeViewInspectorTests: XCTestCase {
         let sut = PokeApi.PokeType.SceneView(observableState: observableState)
         sut.observableState.displayViewContents(viewModel: viewModel)
 
-        var result = PokeApi.PokeType.DamageRelationView(
+        let result = PokeApi.PokeType.DamageRelationView(
             viewModel: viewModel.damageRelationViewModel!,
             viewDelegate: observableState,
             pokemonTypes: pokemonType
         )
         // When
-        let exp = sut.inspection.inspect { [self] view in
-            guard let selectedTypeView = try? view.find(PokeApi.PokeType.DamageRelationView.self, containing: "Steel")
+        let exp = result.inspection.inspect { [self] view in
+            guard let selectedTypeView = try? view.vStack().find(ViewType.Text.self, containing: "Steel")
             else { return XCTFail("title not found") }
             
             //MARK: Find supereffective types
@@ -81,6 +81,7 @@ final class PokeApiTypeViewInspectorTests: XCTestCase {
             XCTAssertEqual(rockResult, subtitle)
             XCTAssertEqual(iceResult, subtitle)
         }
+        ViewHosting.host(view: result)
         wait(for: [exp], timeout: timeout)
     }
     

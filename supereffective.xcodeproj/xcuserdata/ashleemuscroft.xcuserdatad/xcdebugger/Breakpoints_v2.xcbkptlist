@@ -46,8 +46,8 @@
             filePath = "supereffective/Modules/PokeTypes/PokeApiTypeSceneView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -87,16 +87,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D1F24798-E5C3-401D-9EF8-30341637263E"
+            uuid = "CE9573B0-C0B7-4C78-94C9-D709F692D6F0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "supereffectiveTests/ViewInspectorTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "test_noContentView_withExpected()"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "test_DamageRelationView_withExpected()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E993DC0F-03D8-48AF-84AB-BE59CE5478B5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/supereffective-fbxoizfcwlpayrbmxbspmejofznd/SourcePackages/checkouts/ViewInspector/Sources/ViewInspector/ViewHosting.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "host(view:size:function:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

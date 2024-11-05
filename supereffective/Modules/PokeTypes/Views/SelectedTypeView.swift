@@ -54,7 +54,7 @@ extension PokeApi.PokeType {
                 //box shadow
                 Rectangle()
                     .fill(.background)
-                    .frame(width: .infinity, height: 56, alignment: .leading)
+                    .frame(minHeight: 56, alignment: .leading)
                     .shadow(color: themeColor, radius: 1, x: 0, y: 1)
                 HStack{
                     Image(systemName: "bolt.horizontal.circle.fill")
@@ -68,6 +68,7 @@ extension PokeApi.PokeType {
                     .opacity(1)
                 }
             }
+            .background(ignoresSafeAreaEdges: .horizontal)
             
         }
     }
@@ -97,10 +98,12 @@ extension PokeApi.PokeType {
                             notEffective: viewModel.notVeryEffective.contains(type.name),
                             themeColor: viewModel.theme)
                     .listRowSeparator(.hidden)
+                    .listRowSpacing(.zero)
+                    .listRowBackground(viewModel.theme)
                 }
                 .listRowInsets(EdgeInsets.init(top: 0, leading: 8, bottom: 0, trailing: 8))
                 .frame(minHeight: 1000)
-                .listStyle(.inset)
+                .listStyle(.plain)
                 Button(viewModel.buttonText) {
                     viewDelegate?.navigateToPokemonView()
                 }

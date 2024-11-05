@@ -8,6 +8,7 @@
 import SwiftUI
 extension PokeApi.PokeType {
     struct NoContentView: View {
+        internal let inspection = Inspection<Self>()
         var body: some View {
             ContentUnavailableView(
                 label: {
@@ -20,7 +21,12 @@ extension PokeApi.PokeType {
                     )},
                 actions: {
                     Button("PlaceHolder", action: {})
-                })
+                })            
+            .onReceive(
+                    inspection.notice
+                ) {
+                    self.inspection.visit(self,$0)
+                }
         }
     }
 }

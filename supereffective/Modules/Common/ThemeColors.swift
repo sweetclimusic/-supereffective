@@ -14,8 +14,8 @@ struct ColorStruct {
     var dark: Color
     
     var color: Color {
-        @Environment(\.colorScheme) var colorScheme
-        return colorScheme == .dark ? dark : light
+       let colorScheme = UIApplication.shared.connectedScenes.first?.inputView?.traitCollection.userInterfaceStyle.rawValue ?? 0
+        return SwiftUI.ColorScheme(UIUserInterfaceStyle(rawValue:colorScheme)!) == .dark ? dark : light
     }
 }
 

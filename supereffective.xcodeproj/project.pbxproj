@@ -51,6 +51,9 @@
 		57BBAB1E2BE7E6D300E3DE8C /* ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BBAB1D2BE7E6D300E3DE8C /* ThemeColors.swift */; };
 		57BBAB222BE895D200E3DE8C /* ViewInspectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BBAB212BE895D200E3DE8C /* ViewInspectorTests.swift */; };
 		57BBAB252BE8DB9200E3DE8C /* PokeApiPokeTypeSpies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BBAB242BE8DB9200E3DE8C /* PokeApiPokeTypeSpies.swift */; };
+		57C1057B2BF51047006ECCE1 /* PokemonFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C1057A2BF51047006ECCE1 /* PokemonFavorites.swift */; };
+		57C1057D2BF51A7D006ECCE1 /* FavoriteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C1057C2BF51A7D006ECCE1 /* FavoriteProtocol.swift */; };
+		57C1057F2BF52258006ECCE1 /* DataStore+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C1057E2BF52258006ECCE1 /* DataStore+Injection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,9 @@
 		57BBAB1D2BE7E6D300E3DE8C /* ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColors.swift; sourceTree = "<group>"; };
 		57BBAB212BE895D200E3DE8C /* ViewInspectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInspectorTests.swift; sourceTree = "<group>"; };
 		57BBAB242BE8DB9200E3DE8C /* PokeApiPokeTypeSpies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeApiPokeTypeSpies.swift; sourceTree = "<group>"; };
+		57C1057A2BF51047006ECCE1 /* PokemonFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonFavorites.swift; sourceTree = "<group>"; };
+		57C1057C2BF51A7D006ECCE1 /* FavoriteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProtocol.swift; sourceTree = "<group>"; };
+		57C1057E2BF52258006ECCE1 /* DataStore+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataStore+Injection.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				57BBAAEA2BE19B5D00E3DE8C /* FactoryContainer.swift */,
+				57C1057E2BF52258006ECCE1 /* DataStore+Injection.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -281,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				57BBAAF02BE1A73C00E3DE8C /* PokemonData.swift */,
+				57C1057A2BF51047006ECCE1 /* PokemonFavorites.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -310,6 +318,7 @@
 				57BBAAF92BE1AEB800E3DE8C /* ProtocolDoubles.swift */,
 				57BBAB0A2BE3906400E3DE8C /* ProtocolNavigationSavePath.swift */,
 				57BBAB1B2BE6E6A900E3DE8C /* StringExtension.swift */,
+				57C1057C2BF51A7D006ECCE1 /* FavoriteProtocol.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -498,6 +507,7 @@
 				57BBAACF2BE1974500E3DE8C /* PokeApiTypeRouter.swift in Sources */,
 				57BBAAD22BE1974500E3DE8C /* PokeApiTypeViewModelBuilder.swift in Sources */,
 				57BBAAFA2BE1AEB800E3DE8C /* ProtocolDoubles.swift in Sources */,
+				57C1057D2BF51A7D006ECCE1 /* FavoriteProtocol.swift in Sources */,
 				57BBAA662BE1912200E3DE8C /* ContentView.swift in Sources */,
 				57BBAA642BE1912200E3DE8C /* supereffectiveApp.swift in Sources */,
 				57BBAB152BE4495200E3DE8C /* PokeBallViewModifier.swift in Sources */,
@@ -507,9 +517,11 @@
 				57BBAAE32BE198E200E3DE8C /* PokeApiPokemonPresenter.swift in Sources */,
 				57BBAAE42BE198E200E3DE8C /* PokeApiPokemonRouter.swift in Sources */,
 				57BBAAFD2BE1BDF000E3DE8C /* Inspection.swift in Sources */,
+				57C1057F2BF52258006ECCE1 /* DataStore+Injection.swift in Sources */,
 				57BBAAE52BE198E200E3DE8C /* PokeApiPokemonModels.swift in Sources */,
 				57BBAAE72BE198E200E3DE8C /* PokeApiPokemonHeaderCardView.swift in Sources */,
 				57BBAAEE2BE19F3800E3DE8C /* PokeApiRequestService.swift in Sources */,
+				57C1057B2BF51047006ECCE1 /* PokemonFavorites.swift in Sources */,
 				57BBAAE82BE198E200E3DE8C /* PokeApiPokemonInteractor.swift in Sources */,
 				57BBAB102BE3ECC300E3DE8C /* DisplayableSceneViews.swift in Sources */,
 				57BBAB092BE2FA4500E3DE8C /* PokeApiTypeObservableState.swift in Sources */,
